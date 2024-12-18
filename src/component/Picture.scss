@@ -1,0 +1,28 @@
+// Picture.scss
+$background-color: #e0f7fa; // 定义变量
+$shadow-color: rgba(0, 0, 0, 0.1);
+
+.background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 99vh;
+    background-color: #f0f0f0;
+    overflow: hidden;
+
+    &--active {
+        // 使用嵌套语法
+        background-color: $background-color;
+    }
+}
+
+.picture {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px $shadow-color;
+
+    &--active {
+        border: 1px solid purple;
+    }
+}

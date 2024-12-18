@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Moving Dot</title>
+    <style>
+        body, html {
+            margin: 0;
+            overflow: hidden;
+        }
+        #container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+        #dot {
+            position: absolute;
+            background-color: red;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            left: -10px;
+            top: -10px;
+            transform: translate(0px, 0px);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="dot"></div>
+    </div>
+
+    <script>
+        // Get references to the DOM elements
+        const container = document.getElementById('container');
+        const dot = document.getElementById('dot');
+
+        // Add event listener for pointer movement
+        container.addEventListener('pointermove', (e) => {
+            // Update dot position using transform
+            dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        });
+    </script>
+</body>
+</html>
